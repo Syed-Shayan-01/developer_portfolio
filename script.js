@@ -6,19 +6,15 @@ document.addEventListener("mousemove", (e) => {
   const x = e.clientX;
   const y = e.clientY;
 
-  // Use translate3d for better performance (GPU)
-  // No setTimeout used here = NO LAG
   if (cursor) {
       cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
   }
   
   if (cursorFollower) {
-      // Follower follows smoothly because of CSS transition, not JS delay
       cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
   }
 });
 
-// Cursor Hover Effects
 document.querySelectorAll("a, button, .project-card, .skill, .education-item").forEach((element) => {
   element.addEventListener("mouseenter", () => {
     if (cursorFollower) {
@@ -36,6 +32,27 @@ document.querySelectorAll("a, button, .project-card, .skill, .education-item").f
     }
   });
 });
+
+// --- MOBILE MENU TOGGLE (NEW CODE) ---
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+if (hamburger) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    });
+}
+
+// Close menu when a link is clicked
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+    });
+});
+
 
 // --- SCROLL ANIMATIONS ---
 const observerOptions = {
@@ -91,7 +108,7 @@ if (contactForm) {
     });
 }
 
-// --- PARALLAX EFFECT FOR HERO SECTION ---
+// --- PARALLAX EFFECT ---
 window.addEventListener("scroll", () => {
   const scrolled = window.pageYOffset;
   const home = document.getElementById("home");
@@ -100,6 +117,5 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Initialize first section as visible
 const homeSection = document.getElementById("home");
 if (homeSection) homeSection.classList.add("visible");
