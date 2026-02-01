@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MERN Stack Developer - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-  </head>
-  <body>
+</head>
+<body>
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
     <nav id="navbar">
       <div class="nav-container">
         <a href="#home" class="logo">SS Portfolio</a>
+        
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -29,17 +36,16 @@
         <div class="hero-content">
           <h1>Hi, I'm <span class="highlight">Syed Shayan</span></h1>
           <p>Full Stack MERN Developer crafting modern web experiences</p>
-          <a href="#projects" class="cta-button">View My Work</a>
-          <a
-            href="https://drive.google.com/file/d/10tv1yKddW_jbLap6XyNWzPc4x4jGWeqM/view?usp=sharing"
-            class="cta-button"
-            >Download Resume</a
-          >
+          
+          <div class="hero-buttons">
+              <a href="#projects" class="cta-button">View My Work</a>
+              <a href="https://drive.google.com/file/d/10tv1yKddW_jbLap6XyNWzPc4x4jGWeqM/view?usp=sharing" class="cta-button">Download Resume</a>
+          </div>
         </div>
       </div>
     </section>
 
-<section id="about">
+    <section id="about">
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
@@ -395,5 +401,5 @@
         <p>&copy; 2024 Syed Shayan. All rights reserved.</p>
       </div>
     </footer>
-  </body>
+</body>
 </html>
